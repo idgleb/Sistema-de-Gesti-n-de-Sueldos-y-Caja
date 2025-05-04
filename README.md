@@ -94,6 +94,11 @@ Con este conjunto de funcionalidades, el sistema soporta desde la operación dia
 
 ---
 
+![ER-diagrama](https://github.com/user-attachments/assets/3dbca5cb-ee6b-4ff4-a249-84232485444d)
+
+
+---
+
 ## 🗄️ Esquema de la base de datos
 
 | Tabla                                                               | Descripción                      |
