@@ -2,7 +2,7 @@
 
 ## Descripción
 
-**Sueldo** es un sistema de gestión financiera y de nómina para empresas con múltiples sucursales y cajas. Permite controlar todos los movimientos de dinero, calcular sueldos basados en la experiencia y desempeño de los empleados, así como gestionar turnos, multas y premios.
+**Sistema de Gestión de Sueldos y Cajas** es un sistema de gestión financiera y de nómina para empresas con múltiples sucursales y cajas. Permite controlar todos los movimientos de dinero, calcular sueldos basados en la experiencia y desempeño de los empleados, así como gestionar turnos, multas y premios.
 
 ---
 
