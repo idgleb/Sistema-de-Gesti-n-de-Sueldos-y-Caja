@@ -1,6 +1,4 @@
-# Sueldo
-
-![Sueldo Logo](https://via.placeholder.com/150)
+# Sistema de Gestión de Sueldos y Cajas
 
 ## Descripción
 
