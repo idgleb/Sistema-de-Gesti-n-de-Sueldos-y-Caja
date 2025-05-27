@@ -28,13 +28,26 @@ from (select v.movimiento_id_movimiento, sum(dv.cantidad * dv.precio_unitario) a
 	 )as ventas_totales;
      
 -- encontramos el dia con maximo de ventas     
-select dia, max(total_ventas) as ventas_maximo 
-from (SELECT
-      DATE(m.fecha_hora) AS dia, SUM(dv.cantidad * dv.precio_unitario) AS total_ventas
-      FROM movimiento m
-      JOIN detalle_venta dv
-      ON dv.venta_movimiento_id_movimiento = m.id_movimiento
-      GROUP BY DATE(m.fecha_hora)) as ventas_por_dia;
+--  una consulta que primero obtenga el máximo de ventas diarias y luego recuperar el día correspondiente.
+select día, total_ventas as ventas_maximo
+from (
+    select
+        date(m.fecha_hora) as día,
+        sum(dv.cantidad * dv.precio_unitario) as total_ventas
+    from movimiento m
+    join detalle_venta dv on dv.venta_movimiento_id_movimiento = m.id_movimiento
+    group by date(m.fecha_hora)
+) as ventas_por_dia
+where total_ventas = (
+    select max(total_ventas)
+    from (
+        select
+            sum(dv.cantidad * dv.precio_unitario) as total_ventas
+        from movimiento m
+        join detalle_venta dv on dv.venta_movimiento_id_movimiento = m.id_movimiento
+        group by date(m.fecha_hora)
+    ) as sub
+);
       
 -- el producto con minimo precio
 select nombre, min(precio) from servicio_prod;  
